@@ -79,8 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 if(mTimer == null) {
                     if (cursor.moveToNext()) {
                         getImageView(cursor);
-                    } else {
-                        cursor.moveToFirst();
+                    } else if(cursor.moveToFirst()) {
                         getImageView(cursor);
                     }
                 }
@@ -94,8 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 if(mTimer == null) {
                     if (cursor.moveToPrevious()) {
                         getImageView(cursor);
-                    } else {
-                        cursor.moveToLast();
+                    } else if (cursor.moveToLast()) {
                         getImageView(cursor);
                     }
                 }
@@ -119,8 +117,7 @@ public class MainActivity extends AppCompatActivity {
                                 public void run() {
                                     if (cursor.moveToNext()) {
                                         getImageView(cursor);
-                                    } else {
-                                        cursor.moveToFirst();
+                                    } else if(cursor.moveToFirst()) {
                                         getImageView(cursor);
                                     }
                                 }
